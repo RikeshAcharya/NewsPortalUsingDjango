@@ -9,9 +9,9 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-
 class News(models.Model):
     title=models.CharField(max_length=200)
+    category=models.ForeignKey(Category,related_name='category_news',on_delete=models.CASCADE, blank=True,null=True)
     description=models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
