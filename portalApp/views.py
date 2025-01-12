@@ -12,3 +12,7 @@ def home(request):
 
 def about(request):
     return render(request,'about.html')
+
+def news_detail(request,id):
+    print(id)
+    return render(request,'news_detail.html',{'news':news_detail})

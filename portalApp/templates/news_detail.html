@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{%load static %}
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center">{{ news.title }}</h1>
+        <p class="lead mt-3">{{ news.description }}</p>
+        <span class="badge bg-primary mt-3">{{ news.category }}</span>
+
+        <!-- More details about the news -->
+        <div class="mt-5">
+            <h3>Additional Information</h3>
+            
+            <p  >{{ news.details }}</p>
+        </div>
+        {% for i in news %}
+        <img src="{%static 'dragon-removebg-preview.png'%}">
+        {% endfor %}
+        <a href="{% url 'portalApp:home' %}" class="btn btn-secondary mt-4">Back to Home</a>
+    </div>
+{% endblock %}
